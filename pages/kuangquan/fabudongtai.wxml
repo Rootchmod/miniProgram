@@ -1,0 +1,21 @@
+<wux-gallery id="wux-gallery" />
+
+<view class="page">
+    <wux-navbar bind:click="onRightClick">
+        <wux-button slot="right" size="small" type="positive">发 表</wux-button>
+    </wux-navbar>
+    <wux-cell-group title="">
+        <wux-cell hover-class="none">
+            <wux-textarea hasCount rows="3" cursorSpacing="80" placeholder="这一刻的想法..." 
+                bind:change="onTextChange" />
+        </wux-cell>
+    </wux-cell-group>
+    <view class="upload"><progress percent="{{ progress }}" show-info="{{progress>0}}" /></view>
+    <wux-upload wux-class="upload" progress listType="picture-card" defaultFileList="{{ fileList }}" max="9"
+        url="{{uploadUrl}}" bind:change="onChange" bind:success="onSuccess" bind:fail="onFail"
+        bind:complete="onComplete" bind:preview="onPreview" bind:progress="onProgress">
+        <text>＋</text>
+    </wux-upload>
+</view>
+
+<wux-toast id="wux-toast" />

@@ -1,0 +1,16 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "wux-card": "../../dist/card/index",
+        "wux-wing-blank": "../../dist/wing-blank/index",
+        "wux-navbar": "../../dist/navbar/index",
+        "wux-cell": "../../dist/cell/index",
+        "wux-icon": "../../dist/icon/index",
+        "wux-input": "../../dist/input/index",
+        "wux-textarea": "../../dist/textarea/index",
+        "wux-picker": "../../dist/picker/index",
+        "wux-toast": "../../dist/toast/index",
+        "wux-upload": "../../dist/upload/index",
+        "wux-gallery": "../../dist/gallery/index"
+    }
+}

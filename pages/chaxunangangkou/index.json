@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "首页",
+    "usingComponents": {
+        "wux-cell-group": "../../dist/cell-group/index",
+        "wux-cell": "../../dist/cell/index",
+        "wux-search-bar": "../../dist/search-bar/index",               
+        "wux-grids": "../../dist/grids/index",
+        "wux-grid": "../../dist/grid/index",
+        "wux-toast": "../../dist/toast/index"
+    }
+}

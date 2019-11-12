@@ -1,0 +1,46 @@
+<form>
+    <view class="cu-form-group margin-top">
+        <view class="title">企业名称</view>
+        <input placeholder="请输入商家名称" bindblur="nameOnBlur" focus="{{nameFocus}}"></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">企业分类</view>
+        <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+            <view class="picker">
+                {{index?picker[index]:'请选择...'}}
+            </view>
+        </picker>
+    </view>
+    <view class="cu-form-group margin-top">
+        <view class="title">企业地址</view>
+        <input placeholder="请输入具体地址" bindblur="addressOnBlur"></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">联系电话</view>
+        <input type="number" placeholder="请输入联系电话" bindblur="phoneNumberOnBlur"></input>
+    </view>
+
+    <view class="cu-form-group margin-top">
+        <view class="title">上传图片</view>
+        <wux-upload wux-class="uploadClass" header="{{uploadHeader}}" listType="picture-card" max="1" url="{{uploadUrl}}" bind:change="onLogoUploadChange"
+            bind:success="onLogoUploadSuccess" bind:fail="onLogoUploadFail" bind:complete="onLogoUploadComplete"
+            bind:preview="onLogoUploadPreview">
+            <text>+企业头像</text>
+        </wux-upload>
+        <wux-upload wux-class="uploadClass" header="{'content-type':'application/text'}" listType="picture-card" max="1" url="{{uploadUrl}}" bind:change="onPictureUploadChange"
+            bind:success="onPictureUploadSuccess" bind:fail="onPictureUploadFail"
+            bind:complete="onPictureUploadComplete" bind:preview="onPictureUploadPreview">
+            <text>+企业照片</text>
+        </wux-upload>
+    </view>
+
+    <wux-cell-group title="企业简介">
+        <wux-cell hover-class="none">
+            <wux-textarea hasCount rows="3" cursorSpacing="80" placeholder="请输入企业简介..." bind:blur="descriptionOnBlur" />
+        </wux-cell>
+    </wux-cell-group>
+    <wux-selectable wux-class="uploadClass" bind:change="selectableOnChange" color="positive" value="1">阅读并同意《企业入驻须知》</wux-selectable>
+    <wux-button controlled disabled="{{buttonDisabled}}" bind:click="buttonOnClick" block type="positive">申请开通</wux-button>
+</form>
+
+<wux-toast id="wux-toast" />

@@ -1,0 +1,105 @@
+<wux-gallery id="wux-gallery" />
+<view class="page">
+    <wux-navbar bind:click="onRightClick">
+        <view>矿圈</view>
+        <text slot="right" class="cuIcon-cameraaddfill lg text-black" style="font-size:24px;"></text>
+    </wux-navbar>
+
+    <view class="cu-card dynamic no-card" wx:for="{{array}}" wx:key="{{index}}"
+        data-post-id="{{item.id}}">
+        <view class="cu-item shadow">
+         <navigator url="/pages/qiye/xiugaixinxi?id={{item.id}}" hover-class="none">
+            <view class="cu-list menu-avatar">
+            <!-- 头像点击跳转公司详情页 -->
+           
+                <view class="cu-item">
+                  
+                    <view class="cu-avatar round lg" style="background-image:url({{item.avatar}});">
+                    </view>
+                    <view class="content flex-sub">
+                        <view>{{item.poster}}</view>
+                        <view class="text-gray text-sm flex justify-between">
+                            {{item.postTime}}
+                        </view>
+                    </view>
+                  
+                </view>
+            
+            <!-- 结束 -->
+            </view>
+            </navigator>
+            <view class="text-content">
+                {{item.content}}
+            </view>
+            <view class="grid flex-sub padding-lr col-3 grid-square">
+                <view class="bg-img" style="background-image:url({{itemPostImage}});" wx:for="{{item.imageUrls}}" wx:key
+                    wx:for-index="indexPostImage" wx:for-item="itemPostImage" bindtap="previewImage"
+                    data-current-index="{{index}}" data-current="{{itemPostImage}}">
+                </view>
+            </view>
+
+            <view class="padding-sm flex flex-wrap">
+                <view class="padding-xs" wx:for="{{item.recentPost}}" wx:key wx:for-index="idx" wx:for-item="itemName"
+                    data-product-type-id="{{itemName.id}}" data-post-user-id="{{item.posterId}}" bindtap="navigateToRecentInventory">
+                    <view class="cu-tag radius sm bg-{{itemName.name}}">{{itemName.title}}</view>
+                </view>
+            </view>
+
+            <view class="text-gray text-sm text-right padding">
+                <text data-post-id="{{item.id}}" bindtap="doLike" style="font-size: 18px;"
+                    class="cuIcon-appreciatefill margin-lr-xs {{item.isLike?'text-red':''}}"></text>{{item.likeCount}}
+                <text style="font-size: 18px;" class="cuIcon-messagefill margin-lr-xs" data-parent-post-id="{{item.id}}"
+                    data-post-index="{{index}}" bindtap="showModal"></text> {{item.commentCount}}
+            </view>
+
+            <view wx:if="{{item.isCommentShow}}" class="cu-list menu-avatar comment solids-top">
+                <view wx:for="{{item.commentList}}" wx:for-index="indexComment" wx:for-item="itemComment"
+                    data-post-id="{{itemComment.id}}" class="cu-item">
+                    <view class="cu-avatar round" style="background-image:url({{itemComment.avatar}});">
+                    </view>
+                    <view class="content">
+                        <view class="text-grey">{{itemComment.poster}}</view>
+                        <view class="text-gray text-content text-df">
+                            {{itemComment.content}}
+                        </view>
+                        <view wx:for="{{itemComment.subCommentList}}" wx:for-index="indexSubComment"
+                            wx:for-item="itemSubComment" data-post-id="{{indexSubComment.id}}"
+                            class="bg-grey padding-sm radius margin-top-sm text-sm">
+                            <view class="flex">
+                                <view>{{itemSubComment.poster}}：</view>
+                                <view class="flex-sub">{{itemSubComment.content}}</view>
+                            </view>
+                        </view>
+                        <view class="margin-top-sm flex justify-between">
+                            <view class="text-gray text-df">{{itemComment.postTime}}</view>
+                            <view>
+                                <text data-post-id="{{itemComment.id}}" data-parent-post-id="{{item.id}}"
+                                    bindtap="doCommentLike" style="font-size: 18px;"
+                                    class="cuIcon-appreciatefill {{itemComment.isLike?'text-red':'text-gray'}}"></text>
+                                <text data-parent-post-id="{{item.id}}" data-post-id="{{itemComment.id}}"
+                                    data-post-index="{{index}}" data-comment-index="{{indexComment}}"
+                                    bindtap="showModal" class="cuIcon-messagefill text-gray margin-left-sm" style="font-size: 18px;"></text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <wux-divider dashed />
+    </view>
+
+</view>
+
+<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}" style="text-align:left;">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white">
+            <view bindtap="writeComment" class="action text-green">确定</view>
+            <view class="action text-blue" bindtap="hideModal">取消</view>
+        </view>
+        <view class="padding-xl">
+            <textarea maxlength="50" bindinput="replyInput" placeholder="在此输入评论..." value="{{replyText}}"></textarea>
+        </view>
+    </view>
+</view>
+
+<wux-toast id="wux-toast" />

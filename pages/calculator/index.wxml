@@ -1,0 +1,32 @@
+<view class="page">
+
+    <view class="page__bd">
+        <wux-cell-group title="公式">
+            <wux-cell hover-class="none">
+                人民币单价 = [ 美元单价 × 汇率 × ( 1 - 水分% ) + 港口费 ] × 1.13
+            </wux-cell>
+        </wux-cell-group>
+        <wux-cell-group title="">
+            <wux-cell hover-class="none">
+                <wux-input label="单价" type="number" extra="美元 $" value="{{priceDollar}}"
+                    bind:blur="onBlurPriceDollar" />
+            </wux-cell>
+            <wux-cell hover-class="none">
+                <wux-input label="汇率" value="{{exchangeRate}}" extra="汇率(每小时更新)" controlled
+                    bind:blur="onBlurExchangeRate" />
+            </wux-cell>
+            <wux-cell hover-class="none">
+                <wux-input label="水分" type="number" extra="%" value="{{discount}}" bind:blur="onBlurDiscount" />
+            </wux-cell>
+            <wux-popup-select value="{{ portFee }}" options="{{ portOptions }}" bind:confirm="onSelectConfirm">
+                <wux-cell title="港口" is-link extra="{{ displayPortFee }}"></wux-cell>
+            </wux-popup-select>
+        </wux-cell-group>
+        <wux-cell-group title="计算结果">
+            <wux-cell hover-class="none">
+                <wux-input value="{{priceRmb}}" label="人民币单价" type="number" extra="元 ￥" controlled />
+            </wux-cell>
+        </wux-cell-group>
+
+    </view>
+</view>

@@ -1,0 +1,17 @@
+<view class="page">
+    <view class="page__bd">
+        <wux-search-bar clear value="{{ value }}" controlled placeholder="按关键词查询" bind:change="onChange"
+            bind:confirm="onConfirm" bind:clear="onClear" />
+        <wux-cell-group wx:for="{{array}}" wux-class="port-item">
+            <wux-cell thumb="{{item.thumb}}" title="{{item.name}}" is-link
+                url="/pages/chaxunangangkou/gangkouchaxunjieguo?portId={{item.id}}&thumb={{m1.encodeURIComponent(item.thumb)}}&name={{item.name}}"
+                open-type="navigateTo"></wux-cell>
+        </wux-cell-group>
+    </view>
+</view>
+
+<wux-toast id="wux-toast" />
+
+<wxs module="m1">
+    module.exports.encodeURIComponent = encodeURIComponent;
+</wxs>

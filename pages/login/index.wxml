@@ -1,0 +1,36 @@
+<!-- <wux-toast id="wux-toast" /> -->
+
+<view class="page">
+    <view class="page__bd">
+        <wux-cell-group title="">
+            <wux-cell hover-class="none">
+                <wux-input label="手机号" placeholder="请输入手机号" type="number" value="{{ phoneNumber }}" controlled
+                    error="{{ error }}" bind:change="onPhoneNumberChange" bind:focus="onPhoneNumberFocus"
+                    bind:blur="onPhoneNumberBlur" bind:confirm="onPhoneNumberConfirm" bind:clear="onPhoneNumberClear"
+                    bind:error="onPhoneNumberError" />
+            </wux-cell>
+            <wux-cell hover-class="none">
+                <wux-input label="验证码" placeholder="请输入验证码" value="{{verificationCodeInput}}"
+                    bind:change="onVerificationCodeChange" controlled>
+                    <wux-button slot="footer" size="small" type="positive" bind:click="onSendVerificationCode"
+                        disabled="{{btnVerDisabled}}">{{ c2 || '获取验证码' }}
+                    </wux-button>
+                </wux-input>
+            </wux-cell>
+        </wux-cell-group>
+        <view style="margin-top:20rpx;text-align:center;">
+            <wux-button wux-class="login-button" type="balanced" bind:click="userLogin">登录</wux-button>
+            <!-- <wux-divider show-text="{{ true }}" text="或者" />
+            <wux-button wux-class="login-button" type="royal" open-type="getPhoneNumber"
+                bind:getphonenumber="getPhoneNumber">微信快捷登录</wux-button> -->
+        </view>
+    </view>
+</view>
+
+<wux-landscape visible="{{ visibleLandscape }}" closable="{{false}}">
+    <image src="https://wechatapi.jlyk.net/images/start_1.png" style="height:500rpx;" mode="widthFix" />
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="cu-btn block bg-brown margin-tb-sm lg">
+        <text class="cuIcon-weixin"></text> 确 定</button>
+</wux-landscape>
+
+<wux-toast id="wux-toast" />

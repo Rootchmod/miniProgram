@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "详情",
+    "usingComponents": {
+        "wux-card": "../../dist/card/index",
+        "wux-wing-blank": "../../dist/wing-blank/index",
+        "wux-gallery": "../../dist/gallery/index",
+        "wux-toast": "../../dist/toast/index"
+    }
+}

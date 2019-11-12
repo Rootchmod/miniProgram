@@ -1,0 +1,4 @@
+/* pages/list/index.wxss */
+.login-button {
+    width: 99%;
+}

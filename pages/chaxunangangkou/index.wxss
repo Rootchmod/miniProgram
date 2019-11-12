@@ -1,0 +1,30 @@
+/* pages/list/index.wxss */
+.port-item {
+    padding-top: 10px;
+}
+
+/* .divider-item {
+    font-size: 28rpx;
+    color: gray;
+} 
+<wux-divider show-text="{{ true }}" text="按港口查询" />
+
+        <wux-cell-group wx:for="{{array}}" wux-class="port-item">
+            <wux-cell thumb="{{item.thumb}}" title="{{item.name}}" is-link url="/pages/index/index"
+                open-type="switchTab"></wux-cell>
+        </wux-cell-group>
+        ,
+            {
+                "thumb": "https://cdn1.iconfinder.com/data/icons/general-9/500/more-512.png",
+                "name": "更多准备中..."
+            }
+*/
+/*
+<wux-grids>
+            <wux-grid wx:for="{{array}}" bind:click="navigateToList">
+                <image style="width: 50px; height: 50px;" mode="aspectFit" src="{{item.thumb}}" bind:click=""></image>
+                <view>{{item.name}}</view>
+            </wux-grid>
+        </wux-grids>
+
+*/

@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+    	"wux-icon": "../../dist/icon/index",
+        "wux-grids": "../../dist/grids/index",
+        "wux-grid": "../../dist/grid/index",
+        "wux-avatar": "../../dist/avatar/index",
+        "wux-cell-group": "../../dist/cell-group/index",
+        "wux-cell": "../../dist/cell/index",
+        "wux-toast": "../../dist/toast/index"
+    }
+}

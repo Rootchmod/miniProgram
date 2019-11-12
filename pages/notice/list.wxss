@@ -1,0 +1,95 @@
+.page {
+  height: 100Vh;
+  width: 100vw;
+}
+
+.page.show {
+  overflow: hidden;
+}
+
+.switch-sex::after {
+  content: "\e716";
+}
+
+.switch-sex::before {
+  content: "\e7a9";
+}
+
+.switch-music::after {
+  content: "\e66a";
+}
+
+.switch-music::before {
+  content: "\e6db";
+}
+
+
+/*
+
+
+    <view class="cu-list menu" style="margin-top: 10px;">
+        <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{noticeList}}" wx:key
+            bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd"
+            data-target="move-box-{{index}}">
+
+            
+                <view class="content" style="margin: 10px 0 10px 0;">
+                    <view>
+                        <text class="cuIcon-noticefill text-{{item.isRead?'gray':'red'}} margin-right-xs"></text>
+                        {{item.title}}</view>
+                    <view class="text-gray text-sm">
+                        {{item.content}}</view>
+                </view>
+                <view class="action">
+                    <view class="text-grey text-xs">{{item.receiveTime}}</view>
+                </view>
+                <view class="move">
+                    <view class="bg-grey">已读</view>
+                    <view class="bg-red">删除</view>
+                </view>
+            
+
+
+
+        </view>
+
+
+
+    </view>
+
+
+    <view class="cu-list menu" style="margin-top: 10px;">
+        <view class="cu-item arrow" wx:for="{{commentList}}" wx:key >
+            
+                <view class="cu-avatar radius lg" style="background-image:url({{item.image}});margin: 10px 0 10px 0;">
+                    <view wx:if="{{item.isRead}}" class="cu-tag badge"></view>
+                </view>
+                <view class="content" style="margin:10px 0 10px 5px;">
+                    <view class="text-black">
+                        <text class="text-cut">新评论</text>
+                    </view>
+                    <view class="text-gray text-sm flex">
+                        <text class="text-cut">您的矿圈收到{{item.counts}}条新评论！</text>
+                    </view>
+                </view>
+                <view class="action">
+                    <view class="cu-avatar-group">
+                        <view class="cu-avatar round sm" wx:for="{{item.avatarList}}" wx:for-index="idx"
+                            wx:for-item="itemName" style="background-image:url({{itemName}});">
+                        </view>
+                    </view>
+                    <text class="text-grey text-sm">{{item.avatarList.length}} 人</text>
+                </view>
+            
+        </view>
+
+
+
+    </view>
+
+
+
+*/
+/*
+<view wx:if="{{item.isRead===false}}" class="bg-grey">已读</view>
+*/

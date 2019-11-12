@@ -1,0 +1,18 @@
+/* pages/card/index.wxss */
+.switchClass {
+    font-size: 12px;
+}
+
+.switchSize {   
+    margin-left: 10px;
+}
+
+.groupClass{
+    width:100%;
+    margin:0;
+}
+
+.upload{
+    margin-left:10px;
+    margin-right:10px;
+}

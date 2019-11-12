@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "发布动态",
+    "usingComponents": {
+        "wux-navbar": "../../dist/navbar/index",
+        "wux-icon": "../../dist/icon/index",
+        "wux-cell-group": "../../dist/cell-group/index",
+        "wux-cell": "../../dist/pengyouquan/index",
+        "wux-button": "../../dist/button/index",
+        "wux-textarea": "../../dist/textarea/index",
+        "wux-upload": "../../dist/upload/index",
+        "wux-toast": "../../dist/toast/index"
+    }
+}

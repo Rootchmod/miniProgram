@@ -1,0 +1,55 @@
+/* pages/tag/index.wxss 
+
+
+
+<wux-cell-group wx:for="{{array}}" wx:for-item="i">
+        <wux-card full title="{{i.poster}}" extra="{{i.postTime}}" thumb="{{i.avatar}}">
+            <view slot="body">{{i.content}}
+                <view>
+                    <view>
+                        <view class="weui-cell__bd">
+                            <view class="weui-uploader">
+                                <view class="weui-uploader__bd">
+                                    <view class="weui-uploader__files">
+                                        <block wx:for-items="{{ i.imageUrls }}" wx:key="{{ index }}">
+                                            <view class="weui-uploader__file" bindtap="showGallery2"
+                                                data-current="{{ index }}">
+                                                <image class="weui-uploader__img" src="{{ item }}" />
+                                            </view>
+                                        </block>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view slot="footer">
+                <wux-row>
+                    <wux-col span="8">
+                        <view style="padding-left:30rpx;padding-top:20rpx;">
+                            <image bindtap="qiyexiangqing" wx:for="{{i.imageUrls2}}" wx:for-item="j" mode="aspectFit" style="width:50rpx;height:50rpx;margin-left:10rpx;"
+                                src="{{ j }}" />
+                        </view>
+                    </wux-col>
+                    <wux-col span="4">
+                        <view style="float:right;padding-right:30rpx;padding-top:20rpx;">
+                            <wux-icon size="24" color="rgb(0,125,255)" type="ios-text" /> {{i.commentCount}}
+                        </view>
+                        <view style="float:right;padding-right:30rpx;padding-top:20rpx;">
+                            <wux-icon size="24" color="rgb(0,125,255)" type="ios-thumbs-up" /> {{i.likeCount}}
+                        </view>
+                    </wux-col>
+                </wux-row>
+            </view>
+        </wux-card>
+    </wux-cell-group>
+
+
+
+
+
+<wux-icon slot="right" type="ios-create" size="26" />
+
+https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png
+*/

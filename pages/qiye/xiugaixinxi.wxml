@@ -1,0 +1,30 @@
+<view class="page">
+    <view class="page__bd">
+        <wux-card full title="" extra="" actions="{{ actions }}" bind:action="onAction">
+            <wux-cell-group slot="body">
+                <wux-cell hover-class="none">
+                    <wux-input wx:if="{{isOwner}}" label="公司名称" value="{{ name }}" controlled bind:blur="nameBlur" />
+                    <picker wx:else bindchange="pickerCompanyChange" value="{{indexCompany}}" range="{{pickerCompany}}">
+                        <wux-input disabled="{{true}}" label="所属公司" value="{{ pickerCompany[indexCompany] }}" controlled />
+                    </picker>
+                </wux-cell>
+                <wux-cell hover-class="none">
+                    <picker disabled="{{!isOwner}}" bindchange="pickerChange" value="{{index}}" range="{{picker}}">
+                        <wux-input disabled="{{true}}" label="企业分类" value="{{ picker[index] }}" controlled />
+                    </picker>
+                </wux-cell>
+                <wux-cell hover-class="none">
+                    <wux-input disabled="{{!isOwner}}" label="公司地址" value="{{ address }}" controlled bind:blur="addressBlur" />
+                </wux-cell>
+                <wux-cell hover-class="none">
+                    <wux-input disabled="{{!isOwner}}" label="联系电话" value="{{ phoneNumber }}" controlled bind:blur="phoneNumberBlur" />
+                </wux-cell>
+                <wux-cell hover-class="none">
+                    <wux-textarea disabled="{{!isOwner}}" rows="4" label="公司简介" value="{{description}}" maxlength="200" controlled bind:blur="descriptionBlur"/>
+                </wux-cell>
+            </wux-cell-group>
+        </wux-card>
+    </view>
+</view>
+
+<wux-toast id="wux-toast" />

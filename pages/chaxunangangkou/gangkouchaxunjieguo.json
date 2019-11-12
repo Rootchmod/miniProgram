@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "首页-港口查询结果",
+    "usingComponents": {
+        "wux-cell-group": "../../dist/cell-group/index",
+        "wux-cell": "../../dist/cell/index",
+        "wux-filterbar": "../../dist/filterbar/index",
+        "wux-toast": "../../dist/toast/index"
+    }
+}

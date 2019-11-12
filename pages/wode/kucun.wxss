@@ -1,0 +1,16 @@
+/* <wux-cell>
+                <wux-input error="{{ (!product.name)&&isClickButton }}" bind:error="onError" label="品名" value="{{ product.name }}" controlled bind:change="onNameBlur" />
+            </wux-cell>
+
+*/
+.productCard{
+    margin-top:10px;
+}
+
+.lbclass{
+    width: 100%;
+}
+
+.quantityClass{
+    text-align: right
+}

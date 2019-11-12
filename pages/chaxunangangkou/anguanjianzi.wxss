@@ -1,0 +1,30 @@
+/* pages/filterbar/index.wxss 
+class="weui-uploader__img" 
+
+, () => {
+                    const names = page.data.array.map(currentValue => currentValue.name).filter((v, i, a) => a.indexOf(v) === i);
+
+                    const labels = [{
+                        label: '全部',
+                        value: ''
+                    }].concat(names.map(currentValue => {
+                        return {
+                            label: currentValue,
+                            value: currentValue
+                        }
+                    }));
+
+                    page.setData({
+                        ["items[0].children"]: labels
+                    });
+                }
+
+
+
+
+
+
+
+
+
+*/

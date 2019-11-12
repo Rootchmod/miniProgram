@@ -1,0 +1,11 @@
+
+.test{
+  margin-left: 110rpx;
+  margin-right: 110rpx;
+  border-radius:50rpx;
+  height:80px;
+} 
+
+.avatarClass{
+  margin-top:30px;
+}

@@ -1,0 +1,29 @@
+<view class="page">
+    <view style="text-align:center;margin-bottom: 50px;">
+        <wux-avatar wux-class="avatarClass" src="{{avatarUrl}}" size="large"></wux-avatar>
+        <view else>{{nickName}}</view>
+        <view wx:if="{{nickName.length==0}}" bindtap="login">请点击登录</view>
+    </view>
+    <view class="page__bd">
+        <wux-grids wux-class="test" bordered="{{ false }}">
+            <wux-grid bindtap="kucun" thumb="../../assets/images/warehouse.png" label="库存管理"  data-compnyname='{{compnyname}}' />
+            <wux-grid bindtap="kucunfenxiang" thumb="../../assets/images/share.png" label="库存分享"  data-compnyname='{{compnyname}}'/>
+            <wux-grid bindtap="calculator" thumb="../../assets/images/calculator.png" label="价格转换" />
+        </wux-grids>
+        <wux-cell-group title=" ">
+            <!-- <wux-cell is-link thumb="../../assets/images/star.png" title="我的企业信息" url="/pages/kuangquan/wodeDongtai" open-type="navigateTo"></wux-cell> -->
+            <!-- url="/pages/kuangquan/wodeDongtai" url="/pages/qiye/xiugaixinxi"-->
+            <wux-cell is-link thumb="../../assets/images/star.png" title="我的动态"  open-type="navigateTo" bindtap="dynamic" data-compnyname='{{compnyname}}'></wux-cell>
+            <wux-cell is-link thumb="../../assets/images/edit.png" title="修改信息"  open-type="navigateTo" bindtap="modify" data-compnyname='{{compnyname}}' data-phone='{{detail.phoneNumber}}' data-types='{{detail.type}}' data-address='{{detail.address}}'></wux-cell>
+            <!-- url="/pages/notice/list" -->
+        </wux-cell-group>
+        <wux-cell-group title=" ">
+            <wux-cell is-link thumb="../../assets/images/notifications.png" title="消息中心" bindtap='msggess' data-compnyname='{{compnyname}}'  open-type="navigateTo" extra="{{unReadMessageCount}}"></wux-cell>
+        </wux-cell-group>
+        <wux-cell-group title=" " bindtap="settled" data-name='{{nickName}}' data-compnyname='{{compnyname}}'>
+            <wux-cell  thumb="../../assets/images/office_building.png"  title="企业入驻" ></wux-cell>
+        </wux-cell-group>
+    </view>
+</view>
+
+<wux-toast id="wux-toast" />

@@ -1,0 +1,43 @@
+<view class="page">
+    <wux-navbar bind:click="onNavClick">
+        <view>库存管理</view>
+        <text slot="right" class="cuIcon-roundaddfill lg text-black" style="font-size:24px;"></text>
+    </wux-navbar>
+    <view class="page__bd">
+        <wux-card wux-class="productCard" wx:for="{{products}}" full title="{{item.name}}" actions="{{ item.actions }}" bind:action="onAction">
+            <wux-input slot="extra" wux-class="quantityClass" data-product-index="{{index}}" value="{{ item.quantity }}" extra="万吨" controlled type="number" bind:blur="onQuantityBlur" />
+            <view slot="body" >
+                <wux-input data-product-index="{{index}}" label="价格" value="{{ item.price }}" extra="元/湿吨" controlled type="number" bind:blur="onPriceBlur" />
+                <picker data-product-index="{{index}}" bindchange="onTypeValueChange" value="{{m1.findIndex(typeList,item.type)}}" range="{{typeList}}" range-key="label">
+                    <!-- 姜洁<wux-input disabled="{{true}}" label="类别" value="{{ typeList[m1.findIndex(typeList,item.type)].label }}" controlled /> -->
+                </picker>
+                <picker data-product-index="{{index}}" bindchange="onPortValueChange" value="{{m1.findIndex(portList,item.port)}}" range="{{portList}}"
+                    range-key="label">
+                    <wux-input disabled="{{true}}" label="港口" value="{{ portList[m1.findIndex(portList,item.port)].label }}" controlled />
+                </picker>
+                <wux-input data-product-index="{{index}}" label="贸易商" value="{{ item.seller }}" controlled bind:blur="onSellerBlur" />
+                <wux-input data-product-index="{{index}}" label="船名" value="{{ item.shipName }}" controlled bind:blur="onShipNameBlur" />
+                <wux-textarea data-product-index="{{index}}" rows="2" label="化学指标" controlled value="{{ item.chemicalProperties }}"
+                    bind:blur="onChemicalPropertiesBlur" />
+                <wux-textarea data-product-index="{{index}}" rows="2" label="备注" controlled value="{{ item.remark }}" bind:blur="onRemarkBlur" />
+                <wux-upload listType="picture-card" controlled fileList="{{ item.imageList }}" max="9" url="{{uploadUrl}}"
+                    bind:change="onChange" bind:success="onSuccess" bind:fail="onFail" bind:complete="onComplete"
+                    bind:preview="onPreview" data-product-index="{{index}}">
+                    <text>＋</text>
+                </wux-upload>
+            </view>
+            <view slot="footer">发布于 {{item.date}}</view>
+        </wux-card>
+    </view>
+</view>
+
+<wux-gallery id="wux-gallery" />
+<wux-toast id="wux-toast" />
+
+<wxs module="m1">
+    var findIndex = function(arr,value) {
+    var index = arr.map(function(e) { return e.value; }).indexOf(value);
+    return index;
+    }
+    module.exports.findIndex = findIndex;
+</wxs>

@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "企业入驻",
+    "usingComponents": {
+        "wux-upload": "../../dist/upload/index",
+        "wux-cell-group": "../../dist/cell-group/index",
+        "wux-cell": "../../dist/cell/index",
+        "wux-selectable": "../../dist/selectable/index",
+        "wux-textarea": "../../dist/textarea/index",
+        "wux-button": "../../dist/button/index",
+        "wux-toast": "../../dist/toast/index"
+    }
+}

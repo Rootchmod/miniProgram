@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "List",
+    "usingComponents": {
+        "wux-icon": "../../dist/icon/index",
+        "wux-cell-group": "../../dist/cell-group/index",
+        "wux-cell": "../../dist/cell/index",
+        "wux-card": "../../dist/pengyouquancard/index",
+        "wux-divider": "../../dist/divider/index"
+    }
+}

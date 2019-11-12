@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "wux-navbar": "../../dist/navbar/index",
+        "wux-icon": "../../dist/icon/index",
+        "wux-cell-group": "../../dist/cell-group/index",
+        "wux-cell": "../../dist/pengyouquan/index",
+        "wux-gallery": "../../dist/gallery/index",
+        "wux-card": "../../dist/pengyouquancard/index",
+        "wux-wing-blank": "../../dist/wing-blank/index",
+        "wux-row": "../../dist/row/index",
+        "wux-col": "../../dist/col/index",
+        "wux-toast": "../../dist/toast/index"
+    }
+}

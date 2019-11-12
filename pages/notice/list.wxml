@@ -1,0 +1,70 @@
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+
+    <view class="cu-list menu" style="margin-top: 10px;">
+        <block wx:for="{{noticeList}}" wx:key>
+            <block wx:if="{{item.noticeType===-2||item.noticeType===2}}">
+                <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" bindtouchstart="ListTouchStart"
+                    bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
+
+                    <view class="content" style="margin: 10px 0 10px 0;">
+                        <view>
+                            <text class="cuIcon-noticefill text-{{item.isRead===true?'gray':'red'}} margin-right-xs"></text>
+                            {{item.title}}</view>
+                        <view class="text-gray text-sm">
+                            {{item.content}}</view>
+                    </view>
+                    <view class="action">
+                        <view class="text-grey text-xs">{{item.receiveTime}}</view>
+                    </view>
+                    <view class="move">                        
+                        <view class="bg-red">删除</view>
+                    </view>
+                </view>
+            </block>
+            <block wx:elif="{{item.noticeType===-1||item.noticeType===1}}">
+                <view bindtap="gotoMyMoments" class="cu-item arrow {{modalName=='move-box-'+ index?'move-cur':''}}"
+                    bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd"
+                    data-target="move-box-{{index}}">
+                    <view class="cu-avatar radius lg"
+                        style="background-image:url({{item.image}});margin: 10px 0 10px 0;">
+                        <view wx:if="{{item.isRead===false}}" class="cu-tag badge"></view>
+                    </view>
+                    <view class="content" style="margin:10px 0 10px 5px;">
+                        <view class="text-black">
+                            <text class="text-cut">新评论</text>
+                        </view>
+                        <view class="text-gray text-sm flex">
+                            <text class="text-cut">您的矿圈收到{{item.counts}}条新评论！</text>
+                        </view>
+                    </view>
+                    <view class="action">
+                        <view class="cu-avatar-group">
+                            <view class="cu-avatar round sm" wx:for="{{item.avatarList}}" wx:for-index="idx"
+                                wx:for-item="itemName" style="background-image:url({{itemName}});">
+                            </view>
+                        </view>
+                        <text class="text-grey text-sm">{{item.avatarList.length}} 人</text>
+                    </view>
+                    <view class="move">                        
+                        <view class="bg-red">删除</view>
+                    </view>
+                </view>
+            </block>
+
+            <wux-divider wx:else text="以下是已读消息" />
+
+
+
+        </block>
+
+
+
+
+
+
+    </view>
+
+
+</scroll-view>
+
+<wux-toast id="wux-toast" />

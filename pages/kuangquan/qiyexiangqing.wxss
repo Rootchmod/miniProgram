@@ -1,0 +1,5 @@
+/* pages/list/index.wxss */
+.testClass {    
+    width: 60rpx;
+    height: 60rpx;    
+}

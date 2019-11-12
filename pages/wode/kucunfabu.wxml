@@ -1,0 +1,56 @@
+<view class="page">
+    <wux-navbar bind:click="onRightClick">
+        <wux-button slot="right" size="small" type="positive">发 表</wux-button>
+    </wux-navbar>
+    <view class="page__bd">
+        <wux-cell-group slot="body">
+            
+            <wux-cell>
+                <picker bindchange="onTypeValueChange" value="{{typeIndex}}" range="{{typeList}}" range-key="label">
+                    <wux-input disabled="{{true}}" error="{{ (!product.name)&&isClickButton }}" bind:error="onError" label="品名" value="{{ typeList[typeIndex].label }}" controlled />
+                </picker>
+            </wux-cell>
+            <wux-cell>
+                <wux-input error="{{ (!product.quantity)&&isClickButton }}" bind:error="onError" label="数量" value="{{ product.quantity }}" extra="万吨" controlled type="text"
+                    bind:change="onQuantityBlur" />
+            </wux-cell>
+            <wux-cell>
+                <wux-input error="{{ (!product.price)&&isClickButton }}" bind:error="onError" label="价格" value="{{ product.price }}" extra="元/湿吨" controlled type="text"
+                    bind:change="onPriceBlur" />
+            </wux-cell>
+            <wux-cell>
+                <picker bindchange="onPortValueChange" value="{{portIndex}}" range="{{portList}}" range-key="label">
+                    <wux-input disabled="{{true}}" error="{{ (!product.port)&&isClickButton }}" bind:error="onError" label="港口" value="{{ portList[portIndex].label }}" controlled />
+                </picker>
+            </wux-cell>
+            <wux-cell>
+                <wux-input disabled="{{true}}" error="{{ (!product.seller)&&isClickButton }}" bind:error="onError" label="贸易商" value="{{ product.seller }}" controlled bind:change="onSellerBlur" />
+            </wux-cell>
+            <wux-cell>
+                <wux-input error="{{ (!product.shipName)&&isClickButton }}" bind:error="onError" label="船名" value="{{ product.shipName }}" controlled bind:change="onShipNameBlur" />
+            </wux-cell>
+            <wux-cell>
+            <!-- 姜洁 -->
+                <wux-textarea error="{{ (!product.chemicalProperties)&&isClickButton }}" bind:error="onError" rows="2" label="化学指标" controlled value="{{ product.chemicalProperties }}" bind:change="onChemicalPropertiesBlur"  />
+            </wux-cell>
+            <wux-cell>
+                <wux-textarea rows="2" label="备注" controlled value="{{ product.remark }}" bind:change="onRemarkBlur" />
+            </wux-cell>
+            <wux-cell title="同步到矿圈">
+                <wux-switch wux-class="switchSize" name="c" slot="footer" value="{{ valueSwitch }}" color="green"
+                    bind:change="onSwitchChange" />
+            </wux-cell>
+            <wux-cell>
+                <view><progress percent="{{ progress }}" wx:if="{{progress}}" show-info="{{true}}"/></view>
+                <wux-upload progress listType="picture-card" max="9" url="{{uploadUrl}}" bind:change="onChange" bind:success="onSuccess" bind:fail="onFail"
+                    bind:complete="onComplete" bind:preview="onPreview" bind:progress="onProgress">
+                    <text>＋</text>
+                </wux-upload>
+            </wux-cell>
+        </wux-cell-group>
+
+    </view>
+</view>
+
+<wux-toast id="wux-toast" />
+<wux-gallery id="wux-gallery" />

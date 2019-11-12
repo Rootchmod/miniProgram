@@ -1,0 +1,4 @@
+/* pages/list/index.wxss 
+        <view class="button-sp-area">
+            <wux-button block type="positive" bind:click="onClick">开 始</wux-button>
+        </view>*/

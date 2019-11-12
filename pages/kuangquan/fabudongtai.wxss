@@ -1,0 +1,25 @@
+.upload{
+    margin-left:10px;
+    margin-right:10px;
+}
+
+/* pages/tag/index.wxss 
+
+
+
+{
+                uid: 0,
+                status: 'uploading',
+                url: 'https://wux.cdn.cloverstd.com/qrcode.jpg',
+            },
+            {
+                uid: 1,
+                status: 'done',
+                url: 'https://wux.cdn.cloverstd.com/qrcode.jpg',
+            },
+            {
+                uid: 2,
+                status: 'error',
+                url: 'https://wux.cdn.cloverstd.com/qrcode.jpg',
+            }
+            */

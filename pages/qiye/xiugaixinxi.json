@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "公司信息",
+    "usingComponents": {
+        "wux-card": "../../dist/card/index",
+        "wux-wing-blank": "../../dist/wing-blank/index",
+        "wux-cell-group": "../../dist/cell-group/index",
+        "wux-cell": "../../dist/cell/index",
+        "wux-input": "../../dist/input/index",
+        "wux-textarea": "../../dist/textarea/index",
+        "wux-toast": "../../dist/toast/index"
+    }
+}

@@ -1,0 +1,22 @@
+/* pages/card/index.wxss
+class="weui-cells weui-cells_after-title"
+
+
+  <view class="weui-cell__bd">
+                            <view class="weui-uploader">
+                                <view class="weui-uploader__bd">
+                                    <view class="weui-uploader__files">
+                                        <block wx:for-items="{{ product.imageUrls }}" wx:key="{{ index }}">
+                                            <view class="weui-uploader__file" bindtap="showGallery2" data-current="{{ index }}">
+                                                <image src="{{ item }}" mode="aspectFit"/>
+                                            </view>
+                                        </block>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+
+
+
+
+*/
