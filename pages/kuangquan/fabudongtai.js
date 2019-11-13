@@ -28,7 +28,7 @@ Page({
                     .query({
                         valueText: page.data.valueText,
                         uploadImageList: page.data.uploadImageList,
-                        userId: app.globalData.userId
+                        userId: wx.getStorageSync("user_Id")
                     }).end();
                 console.log("postMoments", res);
                 if (res.statusCode === 200 && res.data) {

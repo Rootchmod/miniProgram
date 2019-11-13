@@ -9,14 +9,26 @@ const app = getApp();
 
 Page({
     data: {
-        compnyname:'',//公司名称
-        userInfo: app.globalData.userInfo,
-        companyName: "用户名",
-        logo: "../../assets/images/iconfont-empty.png",
-        unReadMessageCount: ''
+      compnyname:'',//公司名称
+      userInfo: app.globalData.userInfo,
+      companyName: "用户名",
+      logo: "../../assets/images/iconfont-empty.png",
+      unReadMessageCount: '',
+      joinCompany: true,
+    },
+    onShow(){
+      // 判断当前是否已入驻
+      let companyId = wx.getStorageSync("companyId");
+      if (companyId){
+        this.setData({
+          joinCompany:true
+        });
+      }
+      
     },
 //库存管理
     kucun(e) {
+      this.tiplogin();
       var name = e.currentTarget.dataset.name; //获取用户名称
       var compnyname = e.currentTarget.dataset.compnyname;//获取公司名称
       if (compnyname == null || compnyname == '') {
@@ -34,6 +46,7 @@ Page({
     },
   // 库存分享
   kucunfenxiang(e) {
+    this.tiplogin();
     var name = e.currentTarget.dataset.name; //获取用户名称
     var compnyname = e.currentTarget.dataset.compnyname;//获取公司名称
     if (compnyname == null || compnyname == '') {
@@ -52,6 +65,7 @@ Page({
   },
   // 我的动态
   dynamic:function(e){
+    this.tiplogin();
     var compnyname = e.currentTarget.dataset.compnyname;//获取公司名称
     if (compnyname == null || compnyname ==''){
       wx.showToast({
@@ -68,6 +82,7 @@ Page({
   },
   //修改信息
   modify:function(e){
+    this.tiplogin();
     var compnyname = e.currentTarget.dataset.compnyname;//获取公司名称
     var address = e.currentTarget.dataset.address;//公司地址
     var phone = e.currentTarget.dataset.phone;//手机
@@ -89,6 +104,7 @@ Page({
 
 // 消息中心
   msggess:function(e){
+    this.tiplogin();
     var compnyname = e.currentTarget.dataset.compnyname;//获取公司名称
     if (compnyname == null || compnyname == '') {
       wx.showToast({
@@ -107,12 +123,14 @@ Page({
 
 //企业入驻
   settled:function(e){
+    this.tiplogin();
     console.log("000000000000000000000000000000-----")
     console.log(e);
     var compnyname = e.currentTarget.dataset.compnyname;//获取公司名称
     var name = e.currentTarget.dataset.name; //获取用户名称   
     console.log(compnyname+"zhang"+name.length+"=======")
   
+    
     if(name == null || name == ''){
  
       wx.showToast({
@@ -121,10 +139,9 @@ Page({
         duration: 1000
       })
       return false;
-      
-      
     } else {
-      if (compnyname != null || compnyname!='') {
+      // RootChmod 判断是否已注册公司
+      if (compnyname) {
         wx.showToast({
           title: '您已绑定公司',
           icon: 'loading',
@@ -143,14 +160,32 @@ Page({
 
     }
   },
-
-  // 点击登陆
+  // 检测是否已登录
   login:function(e){
     setTimeout(function () {
-        wx.reLaunch({
+      wx.reLaunch({
         url: '../login/index',
       })
     }, 500)
+  },
+  // 提示登录
+  tiplogin(){
+    var userid = wx.getStorageSync('user_Id');
+    if (!userid) {
+      wx.showModal({
+        title: '提示',
+        content: '您还没有登录,此功能需要登陆后才可使用,是否登录?',
+        success(res) {
+          if (res.confirm) {
+            wx.reLaunch({
+              url: '../login/index',
+            })
+          } else if (res.cancel) {
+            console.log('好的');
+          }
+        }
+      })
+    }
   },
   //页面加载时
   onLoad: function (e) {
@@ -288,8 +323,4 @@ Page({
             });
         }
     }
-
-
-
-
 })

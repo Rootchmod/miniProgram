@@ -280,7 +280,6 @@ Page({
         const page = this;
         var userid = wx.getStorageSync('user_Id')
         try {
-          
             const res = await app.request()
                 .get(`${config.requestUrl}user/getCompanyInfo`)
                 .query({

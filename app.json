@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/chaxunangangkou/index",
     "pages/index",
     "pages/qiye/form",
@@ -12,7 +11,7 @@
     "pages/qiye/xiugaixinxi",
     "pages/calculator/index",
     "pages/wode/kucunfenxiang",
-    "pages/wode/kucun",    
+    "pages/wode/kucun",  
     "pages/kuangquan/wodeDongtai",
     "pages/kuangquan/fabudongtai",
     "pages/kuangquan/qiyexiangqing",

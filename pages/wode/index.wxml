@@ -20,7 +20,7 @@
         <wux-cell-group title=" ">
             <wux-cell is-link thumb="../../assets/images/notifications.png" title="消息中心" bindtap='msggess' data-compnyname='{{compnyname}}'  open-type="navigateTo" extra="{{unReadMessageCount}}"></wux-cell>
         </wux-cell-group>
-        <wux-cell-group title=" " bindtap="settled" data-name='{{nickName}}' data-compnyname='{{compnyname}}'>
+        <wux-cell-group title=" " wx-if="{{joinCompany}}" bindtap="settled" data-name='{{nickName}}' data-compnyname='{{compnyname}}'>
             <wux-cell  thumb="../../assets/images/office_building.png"  title="企业入驻" ></wux-cell>
         </wux-cell-group>
     </view>

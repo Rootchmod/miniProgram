@@ -123,7 +123,7 @@ Page({
                 .post(`${config.requestUrl}moments/doLike`)
                 .query({
                     postId,
-                    userId: app.globalData.userId
+                    userId: wx.getStorageSync("user_Id")
                 }).end();
             console.log("doLike", res);
             if (res.statusCode === 200 && res.data) {

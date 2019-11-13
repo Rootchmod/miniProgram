@@ -265,15 +265,22 @@ Page({
                     duration: 2000,
                     color: '#fff',
                     text: "提交成功!请等待审核",
-                    success() {
-                        // wx.navigateBack({
-                        //     delta: 99999
-                        // });
-                      wx.navigateTo({
-                        "url": "/pages/wode/index"
-                      });
+                    success:()=> {
+                      
+                      // wx.navigateTo({
+                      //   "url": "/pages/wode/index"
+                      // });
                     }
                 });
+
+                setTimeout(()=>{
+                  // wx.navigateBack({
+                  //   delta:1
+                  // });
+                  wx.reLaunch({
+                    url: '/pages/wode/index',
+                  })
+                },1000);
             } else {
                 $wuxToast().show({
                     type: 'forbidden',
