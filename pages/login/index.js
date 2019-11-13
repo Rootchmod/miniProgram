@@ -96,9 +96,25 @@ Page({
                       page.setData({
                         opeid:e.data
                       })
-                      console.log('叔叔叔');
-                     
+                      let openId = e.data;
+                      const userInfo = app.request()
+                        .get(`${config.requestUrl}User/getUserByOpenId`)
+                        .query({ openId })
+                        .end();
+                      userInfo.then(res=>{
+                        res = res.data[0];
+                        wx.setStorageSync("CompanyId", res.CompanyId);
+                        wx.setStorageSync("userId", res.F_Id);
+                        wx.setStorageSync("user_Id", res.F_Id);
+                        wx.setStorageSync("apiUserInfo", res);
+                        // if(res.F_Id){
+                        //   wx.switchTab({
+                        //     url: '/pages/wode/index'
+                        //   })
+                        // }
+                      })
                       wx.setStorageSync("oids", e.data);
+                      // getUserByOpenId
                       console.log(e.data + '登陆登陆');
                     }
                   })
@@ -235,11 +251,25 @@ Page({
                 if (res1.statusCode === 200 && res1.data) {
                     app.globalData.userId = res1.data;
                   console.log(app.globalData.userId+"000000");
+                  
+                  //RootChmod 根据UserId获取用户信息
+                  const userInfo = app.request()
+                    .get(`${config.requestUrl}User/getUserByOpenId`)
+                    .query({ userId:res1.data })
+                    .end();
+
+                  userInfo.then(res => {
+                    res = res.data[0];
+                    wx.setStorageSync("CompanyId", res.CompanyId);
+                    wx.setStorageSync("userId", res.F_Id);
+                    wx.setStorageSync("user_Id", res.F_Id);
+                    wx.setStorageSync("apiUserInfo", res);
+                  })
                   // 存储缓存
-                  wx.setStorageSync("user_Id", res1.data)
-                    wx.switchTab({
-                      url: "/pages/chaxunangangkou/index"
-                    });
+                  wx.setStorageSync("user_Id", res1.data);
+                  wx.switchTab({
+                    url: "/pages/chaxunangangkou/index"
+                  });
                 } else {
                     $wuxToast().show({
                         type: 'forbidden',

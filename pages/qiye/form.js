@@ -245,7 +245,7 @@ Page({
      
         //const page = this;   姜洁
   
-      var uid = wx.getStorageSync('user_Id');
+      var uid = wx.getStorageSync('userId');
       console.log(uid);
       console.log('变化');
         try {
