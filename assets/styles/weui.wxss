@@ -827,7 +827,7 @@ icon {
 }
 .weui-media-box__info__meta {
   float: left;
-  padding-right: 1em;
+  padding-right: 0.5em;
 }
 .weui-media-box__info__meta_extra {
   padding-left: 1em;

@@ -199,11 +199,12 @@ Page({
 
     async getMyCompanyAndInventory() {
         const page = this;
+        var userid = wx.getStorageSync('user_Id');
         try {
             const res = await app.request()
                 .get(`${config.requestUrl}inventory/getMyCompanyAndInventory`)
                 .query({
-                    userId: app.globalData.userId
+                  userId: userid
                 }).end();
             console.log("getMyCompanyAndInventory", res);
             if (res.statusCode === 200 && res.data) {

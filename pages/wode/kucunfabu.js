@@ -44,16 +44,19 @@ Page({
         });
     },
     onQuantityBlur(e) {
-        console.log('onQuantityBlur', e)
+      if (e.detail.value != null && e.detail.value!=''){
         this.setData({
-            ["product.quantity"]: parseFloat(e.detail.value)
+          ["product.quantity"]: parseFloat(e.detail.value)
         });
+      }
+
     },
     onPriceBlur(e) {
-        console.log('onPriceBlur', e)
+      if (e.detail.value != null && e.detail.value != '') {
         this.setData({
             ["product.price"]: parseFloat(e.detail.value)
         });
+      }
     },
     onSellerBlur(e) {
         console.log('onSellerBlur', e);
