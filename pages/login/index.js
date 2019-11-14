@@ -69,6 +69,7 @@ Page({
 
   onReady() {
     const page = this;
+    
     wx.showLoading({
       title: '加载中',
     });
@@ -108,6 +109,8 @@ Page({
                 wx.setStorageSync("CompanyId", res.CompanyId);
                 wx.setStorageSync("userId", res.F_Id);
                 wx.setStorageSync("user_Id", res.F_Id);
+                app.globalData.userId = res.F_Id;
+                app.globalData.companyId = res.CompanyId;
                 wx.setStorageSync("apiUserInfo", res);
                 // if(res.F_Id){
                 //   wx.switchTab({
@@ -269,6 +272,8 @@ Page({
             wx.setStorageSync("CompanyId", res.CompanyId);
             wx.setStorageSync("userId", res.F_Id);
             wx.setStorageSync("user_Id", res.F_Id);
+            app.globalData.userId = res.F_Id;
+            app.globalData.companyId = res.CompanyId;
             wx.setStorageSync("apiUserInfo", res);
           })
           // 存储缓存
