@@ -22,23 +22,19 @@ Page({
         }],
         product: {
             imageUrls: [
-                'http://n.sinaimg.cn/translate/178/w600h378/20180903/Mvf8-hiqtcan6705225.jpg',
-                'http://n.sinaimg.cn/translate/20170213/jzH3-fyamkqa5939268.jpg',
-                'http://i0.hexunimg.cn/2012-12-02/148604446.jpg',
-                'http://a0.att.hudong.com/47/19/01300000207820122010198953210.jpg',
             ],
-            name: "矿石C",
-            poster: "公司C",
-            price: 800,
-            quantity: 100,
-            date: "2019-02-01",
-            port: "青岛港",
-            chemicalProperties: "Fe: 50%, SiO₂: 35%, Al₂O₃: 20%, S: 0%, P: 0%, H₂O: 50%",
-            remark: "test",
-            seller: "公司ABC",
-            shipName: "船名ABC",
-            posterId: "testGUID",
-            posterPhoneNumber: "13370851680"
+            name: "",
+            poster: "",
+            price: 0,
+            quantity: 0,
+            date: "",
+            port: "",
+            chemicalProperties: "",
+            remark: "",
+            seller: "",
+            shipName: "",
+            posterId: "",
+            posterPhoneNumber: ""
         }
     },
 
