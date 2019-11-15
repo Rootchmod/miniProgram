@@ -39,7 +39,7 @@ Page({
             },
             {
                 type: 'sort',
-                label: '数量(吨)',
+                label: '数量(万吨)',
                 value: "quantity",
                 groups: ["3"]
             }

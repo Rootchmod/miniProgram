@@ -145,8 +145,16 @@ Page({
         wx.showToast({
           title: '您已绑定公司',
           icon: 'loading',
-          duration: 500
+          duration: 1000
         })
+       
+        setTimeout(function () {
+          wx.navigateTo({
+            url: '/pages/qiye/xiugaixinxi'
+          })
+        }, 1000)
+
+        
         return false;
 
       } else {

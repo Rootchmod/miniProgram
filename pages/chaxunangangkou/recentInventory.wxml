@@ -15,8 +15,8 @@
                         <view class="weui-media-box__title">{{ item.name }}</view>
                         <view class="weui-media-box__desc">{{ item.poster }}</view>
                         <view class="weui-media-box__info" style="color:black;">
-                            <view class="weui-media-box__info__meta">数量: <text>{{ item.quantity }}</text></view>
-                            <view class="weui-media-box__info__meta">价格: <text style="color:red;font-weight:bold;">{{ item.price }}</text></view>
+                            <view class="weui-media-box__info__meta">数量: <text>{{ item.quantity }}万吨</text></view>
+                            <view class="weui-media-box__info__meta">价格: <text style="color:red;font-weight:bold;">{{ item.price }}元/湿吨</text></view>
                             <view class="weui-media-box__info__meta">发布于: {{ item.date }}</view>
                         </view>
                     </view>

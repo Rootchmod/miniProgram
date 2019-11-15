@@ -26,6 +26,7 @@ Page({
 
   async getMomentsList(refresh) {
     const page = this;
+    let userId = wx.getStorageSync("userId");
     try {
       const res = await app.request()
         .get(`${config.requestUrl}moments/getMomentsList`)
@@ -33,9 +34,9 @@ Page({
           rows: 10,
           page: page.data.pageIndex,
           searchTime: page.data.searchTime,
-          userId: app.globalData.userId
+          userId: userId
         }).end();
-      console.log("getMomentsList", res);
+      console.log("getMomentsList", res);//打印矿圈数据列表
       if (res.statusCode === 200 && res.data) {
         wx.stopPullDownRefresh();
         wx.hideTabBarRedDot({
