@@ -17,13 +17,13 @@ const posterConfig = {
         height: 1080,
         x: 0,
         y: 0,
-        url: 'https://xinao.ketaiyun.com/images/posterbackground.png',
+      url: 'https://wechatapi.jlyk.net/images/posterbackground.png',
     }, {
         width: 120,
         height: 120,
         x: 480,
         y: 900,
-        url: 'https://xinao.ketaiyun.com/images/qrcode.jpg',
+        url: 'https://wechatapi.jlyk.net/images/qrcode.jpg',
     }],
     texts: [{
         x: 200,
