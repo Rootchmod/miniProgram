@@ -84,7 +84,8 @@ Page({
   onRightClick(e) {
     console.log('onClick', e)
     if (e.detail.type === 'right') {
-      if (!app.globalData.companyId) {
+      let companyId = wx.getStorageSync("CompanyId");
+      if (!companyId) {
         wx.switchTab({
           url: '/pages/wode/index'
         });

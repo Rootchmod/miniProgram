@@ -208,9 +208,9 @@ Page({
             duration: 1000,
             success() {
               setTimeout(() => {
-                wx.redirectTo({
-                  url: '/pages/wode/kucun'
-                });
+                wx.navigateBack({
+                  delta: 1
+                })
               }, 1000);
             }
           });

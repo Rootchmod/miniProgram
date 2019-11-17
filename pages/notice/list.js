@@ -120,7 +120,7 @@ Page({
           rows: 10,
           page: page.data.pageIndex,
           searchTime: page.data.searchTime,
-          userId: app.globalData.userId
+          userId: wx.getStorageSync("userId")
         }).end();
       console.log("getMessageList", res);
       if (res.statusCode === 200 && res.data) {
