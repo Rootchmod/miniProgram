@@ -1,0 +1,5 @@
+view{border-bottom: 1px solid #f0f0f0;line-height: 3;font-size: 28rpx;background: #fff;}
+text{margin-left: 40rpx;}
+page{background: #f0f0f0;}
+.biew{padding: 5%;}
+.last{height: 300rpx;}

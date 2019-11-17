@@ -1,0 +1,8 @@
+<view class="biew">
+  <view>公司名称  <text>{{detail.name}}</text></view>
+  <view>企业分类  <text>{{detail.type}}</text></view>
+  <view>公司地址  <text>{{detail.address}}</text></view>
+  <view>联系电话  <text>{{detail.phoneNumber}}</text></view>
+  <view class="last">公司简介  <text>{{detail.description}}</text></view>
+
+</view>
