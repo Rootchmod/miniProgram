@@ -3,7 +3,7 @@ import config from '../../config';
 import {
   $wuxToast
 } from '../../dist/index'
-
+var useinfo = wx.getStorageSync('userinfo');
 const app = getApp();
 
 Page({
@@ -37,6 +37,7 @@ Page({
           userId: userId
         }).end();
       console.log("getMomentsList", res);//打印矿圈数据列表
+
       if (res.statusCode === 200 && res.data) {
         wx.stopPullDownRefresh();
         wx.hideTabBarRedDot({
@@ -47,6 +48,8 @@ Page({
           data: app.formatDate(new Date())
         });
         page.setData({
+          nickName: useinfo,
+         
           array: refresh ? res.data : page.data.array.concat(res.data),
           pageIndex: refresh ? 2 : page.data.pageIndex + 1
         });

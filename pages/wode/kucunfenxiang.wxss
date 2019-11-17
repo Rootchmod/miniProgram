@@ -1,4 +1,12 @@
 
-.groupClass {
+/* .groupClass {
     margin-top: 20px;
+} */
+/* .wux-card{margin-top: 20px;} */
+ .wux-cell:after{
+ border-bottom:0!important;
+ 
+} 
+.checkbox-index--wux-checkbox:after{
+  border:none!important;
 }

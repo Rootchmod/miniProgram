@@ -7,7 +7,7 @@
 
   <view class="cu-card dynamic no-card" wx:for="{{array}}" wx:key="{{index}}" data-post-id="{{item.id}}">
     <view class="cu-item shadow">
-      <navigator url="/pages/qiye/xiugaixinxi?id={{item.id}}" hover-class="none">
+      <navigator url="/pages/qydetail/qydetail?id={{item.posterId}}" hover-class="none">
         <view class="cu-list menu-avatar">
           <!-- 头像点击跳转公司详情页 -->
 

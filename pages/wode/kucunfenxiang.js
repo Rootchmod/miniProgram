@@ -101,7 +101,7 @@ Page({
                         fontSize: 28
                     },
                     {
-                        text: currentValue.quantity + "吨",
+                        text: currentValue.quantity + "万吨",
                         marginLeft: 60,
                         fontSize: 28
                     },

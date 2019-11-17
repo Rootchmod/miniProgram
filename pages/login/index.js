@@ -104,6 +104,8 @@ Page({
                   openId
                 })
                 .end();
+              console.log(userInfo);
+              console.log('花世界');
               userInfo.then(res => {
                 res = res.data[0];
                 wx.setStorageSync("CompanyId", res.CompanyId);

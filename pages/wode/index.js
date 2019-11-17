@@ -19,6 +19,8 @@ Page({
   onShow() {
     // 判断当前是否已入驻
     let companyId = wx.getStorageSync("companyId");
+    console.log(companyId+'花');
+    
     if (companyId) {
       this.setData({
         joinCompany: true
@@ -203,6 +205,8 @@ Page({
   //页面加载时
   onLoad: function(e) {
     var that = this;
+    let companyId = wx.getStorageSync("companyId");
+    console.log(companyId + '花');
     var userid = wx.getStorageSync('user_Id');
     var opid = wx.getStorageSync('oids');
     var compname = wx.getStorageSync('compname'); //获取公司名称

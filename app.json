@@ -1,11 +1,14 @@
 {
   "pages": [
+    
+    
     "pages/chaxunangangkou/index",
     "pages/index",
     "pages/qiye/form",
+    "pages/qydetail/qydetail",
     "pages/login/index",
     "pages/wode/kucunfabu",    
-    "pages/kuangquan/index",       
+    "pages/kuangquan/index",     
     "pages/notice/list",
     "pages/wode/index",
     "pages/qiye/xiugaixinxi",
