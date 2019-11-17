@@ -77,15 +77,15 @@
 
 </view>
 
-<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}" style="text-align:left;">
-  <view class="cu-dialog">
+<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}" catchtouchmove='ture' style="text-align:left;">
+  <view class="cu-dialog" style="position: relative">
     <view class="cu-bar bg-white">
       <view bindtap="writeComment" class="action text-green">确定</view>
       <view class="action text-blue" bindtap="hideModal">取消</view>
     </view>
     <view class="padding-xl repler-fixed">
-      <textarea maxlength="50" bindinput="replyInput" placeholder="在此输入评论..." value="{{replyText}}"></textarea>
-    </view>
+        <textarea maxlength="50" bindinput="replyInput" placeholder="在此输入评论..." value="{{replyText}}" style="background-color:#f8f8f8"></textarea>
+      </view>
   </view>
 </view>
 
