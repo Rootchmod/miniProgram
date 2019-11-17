@@ -7,7 +7,7 @@
     <view class="page__bd">
         <wux-checkbox-group name="checkbox" value="{{ checkbox }}" bind:change="onCheckboxChange">
             <wux-card wux-class="groupClass" wx:for="{{products}}" full title="{{item.name}}">
-                <wux-checkbox disabled="{{disabledStatus[index]}}" slot="extra" title="" value="{{index+1}}" />
+                <wux-checkbox disabled="{{disabledStatus[index]}}" style="border:0" slot="extra" title="" value="{{index+1}}" />
                 <view slot="body">
                     <view>数量: {{ item.quantity }}万吨</view>
                     <view>价格: {{ item.price }}元/湿吨</view>

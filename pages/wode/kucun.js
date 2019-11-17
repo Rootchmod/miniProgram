@@ -38,15 +38,23 @@ Page({
   onQuantityBlur(e) {
     console.log('onQuantityBlur', e)
     const productIndex = e.currentTarget.dataset.productIndex;
+    let val = parseFloat(e.detail.value);
+    if(!val){
+      val = 0;
+    }
     this.setData({
-      ["products[" + productIndex + "].quantity"]: parseFloat(e.detail.value)
+      ["products[" + productIndex + "].quantity"]: val
     });
   },
   onPriceBlur(e) {
     console.log('onPriceBlur', e)
     const productIndex = e.currentTarget.dataset.productIndex;
+    let val = parseFloat(e.detail.value);
+    if (!val) {
+      val = 0;
+    }
     this.setData({
-      ["products[" + productIndex + "].price"]: parseFloat(e.detail.value)
+      ["products[" + productIndex + "].price"]: val
     });
   },
   onSellerBlur(e) {

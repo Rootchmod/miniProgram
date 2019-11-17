@@ -5,9 +5,9 @@
     </wux-navbar>
     <view class="page__bd">
         <wux-card wux-class="productCard" wx:for="{{products}}" full title="{{item.name}}" actions="{{ item.actions }}" bind:action="onAction">
-            <wux-input slot="extra" wux-class="quantityClass" data-product-index="{{index}}" value="{{ item.quantity }}" extra="万吨" controlled type="number" bind:blur="onQuantityBlur" />
+            <wux-input slot="extra" wux-class="quantityClass" data-product-index="{{index}}" value="{{ item.quantity }}" extra="万吨" controlled type="digit" bind:blur="onQuantityBlur" />
             <view slot="body" >
-                <wux-input data-product-index="{{index}}" label="价格" value="{{ item.price }}" extra="元/湿吨" controlled type="number" bind:blur="onPriceBlur" />
+                <wux-input data-product-index="{{index}}" label="价格" value="{{ item.price }}" extra="元/湿吨" controlled type="digit" bind:blur="onPriceBlur" />
                 <picker data-product-index="{{index}}" bindchange="onTypeValueChange" value="{{m1.findIndex(typeList,item.type)}}" range="{{typeList}}" range-key="label">
                     <!-- 姜洁<wux-input disabled="{{true}}" label="类别" value="{{ typeList[m1.findIndex(typeList,item.type)].label }}" controlled /> -->
                 </picker>

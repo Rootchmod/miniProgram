@@ -44,15 +44,31 @@ Page({
     });
   },
   onQuantityBlur(e) {
-    if (e.detail.value != null && e.detail.value != '') {
+    if (e.detail.value) {
+      let val = parseFloat(e.detail.value);
+      if(!val){
+        val = 0;
+      }
       this.setData({
-        ["product.quantity"]: parseFloat(e.detail.value)
+        ["product.quantity"]: val
+      });
+    }else{
+      this.setData({
+        ["product.quantity"]: 0
       });
     }
 
   },
   onPriceBlur(e) {
-    if (e.detail.value != null && e.detail.value != '') {
+    if (e.detail.value) {
+      let val = parseFloat(e.detail.value);
+      if (!val) {
+        val = 0;
+      }
+      this.setData({
+        ["product.price"]: val
+      });
+    }else{
       this.setData({
         ["product.price"]: parseFloat(e.detail.value)
       });
