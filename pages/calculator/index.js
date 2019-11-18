@@ -43,6 +43,11 @@ Page({
       portFee,
       discount
     } = this.data;
+
+    //priceDollar 单价
+    //exchangeRate 汇率
+    //discount 水分
+    //portFee 港口
     if (!priceDollar){
       wx.showToast({
         title: '请输入单价',
@@ -51,7 +56,7 @@ Page({
       });
       return;
     }
-    if (!portFee) {
+    if (!discount) {
       wx.showToast({
         title: '请输入水分',
         icon: "none",
@@ -59,7 +64,7 @@ Page({
       });
       return;
     }
-    if (!discount) {
+    if (!portFee) {
       wx.showToast({
         title: '请选择港口',
         icon: "none",

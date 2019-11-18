@@ -55,7 +55,8 @@ Page({
         console.log(options);
         this.setData({
             postUserId: options.postUserId,
-            productTypeId: options.productTypeId
+            productTypeId: options.productTypeId,
+            productName: options.productName
         }, this.getKucunList);
     },
     onReady() {

@@ -36,7 +36,7 @@
       </view>
 
       <view class="padding-sm flex flex-wrap">
-        <view class="padding-xs" wx:for="{{item.recentPost}}" wx:key wx:for-index="idx" wx:for-item="itemName" data-product-type-id="{{itemName.id}}" data-post-user-id="{{item.posterId}}" bindtap="navigateToRecentInventory">
+        <view class="padding-xs" wx:for="{{item.recentPost}}" wx:key wx:for-index="idx" wx:for-item="itemName" data-product-type-id="{{itemName.id}}" data-product-name="{{itemName.title}}" data-post-user-id="{{item.posterId}}" bindtap="navigateToRecentInventory">
           <view class="cu-tag radius sm bg-{{itemName.name}}">{{itemName.title}}</view>
         </view>
       </view>
@@ -84,7 +84,7 @@
       <view class="action text-blue" bindtap="hideModal">取消</view>
     </view>
     <view class="padding-xl repler-fixed">
-        <textarea maxlength="50" bindinput="replyInput" placeholder="在此输入评论..." value="{{replyText}}" style="background-color:#f8f8f8"></textarea>
+        <textarea maxlength="50" wx-if="{{modalName}}" bindinput="replyInput" placeholder="在此输入评论..." value="{{replyText}}" style="background-color:#f8f8f8"></textarea>
     </view>
   </view>
 </view>

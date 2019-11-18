@@ -319,10 +319,11 @@ Page({
   navigateToRecentInventory(e) {
     const {
       productTypeId,
-      postUserId
+      postUserId,
+      productName
     } = e.currentTarget.dataset;
     wx.navigateTo({
-      "url": `/pages/chaxunangangkou/recentInventory?productTypeId=${productTypeId}&postUserId=${postUserId}`
+      "url": `/pages/chaxunangangkou/recentInventory?productTypeId=${productTypeId}&postUserId=${postUserId}&productName=${productName}`
     });
   },
 

@@ -3,7 +3,7 @@
         <wux-card full title="" extra="" actions="{{ actions }}" bind:action="onAction">
             <wux-cell-group slot="body">
                 <wux-cell hover-class="none">
-                    <wux-input wx:if="{{isOwner}}" label="公司名称" value="{{ name }}" controlled bind:blur="nameBlur" />
+                    <wux-input disabled wx:if="{{isOwner}}" label="公司名称" value="{{ name }}" controlled bind:blur="nameBlur" />
                     <picker wx:else bindchange="pickerCompanyChange" value="{{indexCompany}}" range="{{pickerCompany}}">
                         <wux-input disabled="{{true}}" label="所属公司" value="{{ pickerCompany[indexCompany] }}" controlled />
                     </picker>
